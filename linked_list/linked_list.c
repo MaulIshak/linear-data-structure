@@ -93,3 +93,19 @@ void insert_first(LinkedList* list, info data){
     list->head = new_node;
   }
 }
+
+void insert_last(LinkedList* list, info data){
+  Node  *new_node, *curr;
+  new_node = create_node(data);
+  if(new_node == NULL) return;
+
+  curr = list->head;
+  if(curr == NULL){
+    insert_first(list, data);
+  }else{
+    while(curr->next != NULL){
+      curr = curr->next;
+    }
+    curr->next = new_node;
+  }
+}

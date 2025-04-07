@@ -14,14 +14,19 @@ int main()
   printf("Initial State: ");
   print_list(myList);
   printf("List lenght: %d\n", get_length(myList));
-
-  insert_first(&myList, 20);
-  insert_first(&myList, 30);
-  insert_first(&myList, 35);
-  insert_first(&myList, 40);
-
-  insert_first(&myList, 50);
+  
+  insert_last(&myList, 10);
   print_list(myList);
+  
+  insert_first(&myList, 20);
+  print_list(myList);
+
+  insert_last(&myList, 32);
+  print_list(myList);
+
+  insert_last(&myList, 60);
+  print_list(myList);
+
   printf("List lenght: %d\n", get_length(myList));
 
   return 0;
