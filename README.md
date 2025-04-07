@@ -80,7 +80,7 @@ make clean
 
 ## ✍️ TODO / Progress
 
-- [x] Linked List (80% done — basic functions & some case studies)
+- [x] Linked List (70% done — basic functions with test case)
 - [ ] Stack (not started yet)
 - [ ] Queue (not started yet)
 - [ ] Additional case studies for each DS (not started yet)
