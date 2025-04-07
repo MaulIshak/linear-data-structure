@@ -26,8 +26,21 @@ int main()
 
   insert_last(&myList, 60);
   print_list(myList);
+  
+  insert_after(&myList, 20, 25);
+  print_list(myList);
+  
+  insert_after(&myList, 10, 199);
+  print_list(myList);
+  
+  insert_at(&myList, 2, 100);
+  print_list(myList);
+
+  insert_before(&myList, 100, 99);
+  print_list(myList);
+  insert_before(&myList, 10, 9);
+  print_list(myList);
 
   printf("List lenght: %d\n", get_length(myList));
-
   return 0;
 }

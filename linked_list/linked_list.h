@@ -9,11 +9,11 @@
 
 #include <stdbool.h>
 
-#define info int
+#define infotype int
 
 // Define the structure for a node in the linked list
 typedef struct Node {
-    info data;
+    infotype data;
     struct Node* next;
 } Node;
 
@@ -25,13 +25,13 @@ typedef struct LinkedList {
 // Initialize the linked list
 void create_list(LinkedList* list);
 // Create a new node with the given data
-Node* create_node(info data);
+Node* create_node(infotype data);
 // Check if the list is empty
 bool is_list_empty(LinkedList list);
 // Check if given data exists in the list
-bool is_exist(LinkedList list, info data);
+bool is_exist(LinkedList list, infotype data);
 // Find a node with the given data in the list
-Node* find_node(LinkedList list, info data);
+Node* find_node(LinkedList list, infotype data);
 // Find the previous node of the given node in the list
 Node* find_prev_node(LinkedList list, Node* node);
 // Get the length of the linked list
@@ -46,25 +46,29 @@ void print_list_reverse(LinkedList list);
 
 // Insert Operations
 // Insert a new node at the beginning of the list
-void insert_first(LinkedList* list, info data);
+void insert_first(LinkedList* list, infotype data);
 // Insert a new node at the end of the list
-void insert_last(LinkedList* list, info data);
-// Insert a new node after the given node in the list
-void insert_after(LinkedList* list, Node* prev_node, info data);
+void insert_last(LinkedList* list, infotype data);
+// Insert a new node after the given data in the list
+void insert_after(LinkedList* list, infotype prev_data, infotype data);
+// Insert a new node after the given data in the list
+void insert_before(LinkedList* list, infotype next_data, infotype data);
 // Insert a new node at the given position in the list
-void insert_at(LinkedList* list, int position, info data);
+void insert_at(LinkedList* list, int position, infotype data);
 
 // Delete Operations
 // Delete the first node in the list
-void delete_first(LinkedList* list, info* temp);
+void delete_first(LinkedList* list, infotype* temp);
 // Delete the last node in the list
-void delete_last(LinkedList* list, info* temp);
-// Delete the node after the given node in the list
-void delete_after(LinkedList* list, Node* prev_node, info* temp);
+void delete_last(LinkedList* list, infotype* temp);
+// Delete the node after the given data in the list
+void delete_after(LinkedList* list, infotype prev_data, infotype* temp);
+// Delete the node after the given data in the list
+void delete_before(LinkedList* list, infotype next_data, infotype* temp);
 // Delete the node with the given data in the list
-void delete_node(LinkedList* list, info data, info* temp);
+void delete_val(LinkedList* list, infotype data, infotype* temp);
 // Delete the node at the given position in the list
-void delete_at(LinkedList* list, int position, info* temp);
+void delete_at(LinkedList* list, int position, infotype* temp);
 
 
 
