@@ -63,6 +63,23 @@ void print_list(LinkedList list){
     printf("[%d]\n", curr->data);
   }
 }
+// Get the length of the linked list
+int get_length(LinkedList list){
+  Node* curr;
+  int count;
+
+  curr = list.head;
+  count = 0;
+
+  while(curr != NULL){
+    count++;
+    curr = curr->next;
+  }
+
+  return count;
+  
+}
+
 
 void insert_first(LinkedList* list, info data){
   Node* new_node;

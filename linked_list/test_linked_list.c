@@ -13,6 +13,7 @@ int main()
   create_list(&myList);
   printf("Initial State: ");
   print_list(myList);
+  printf("List lenght: %d\n", get_length(myList));
 
   insert_first(&myList, 20);
   insert_first(&myList, 30);
@@ -21,6 +22,7 @@ int main()
 
   insert_first(&myList, 50);
   print_list(myList);
-  
-  return 1;
+  printf("List lenght: %d\n", get_length(myList));
+
+  return 0;
 }
