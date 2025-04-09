@@ -9,7 +9,9 @@
 
 int main()
 {
+
   LinkedList myList;
+  infotype temp;
   create_list(&myList);
   printf("Initial State: ");
   print_list(myList);
@@ -40,6 +42,39 @@ int main()
   print_list(myList);
   insert_before(&myList, 10, 9);
   print_list(myList);
+  printf("List lenght: %d\n", get_length(myList));
+
+
+  delete_first(&myList, &temp);
+  printf("Deleted first element: %d\n", temp);
+  print_list(myList);
+  
+  delete_first(&myList, &temp);
+  printf("Deleted first element: %d\n", temp);
+  print_list(myList);
+
+  delete_first(&myList, &temp);
+  printf("Deleted first element: %d\n", temp);
+  print_list(myList);
+
+  printf("List lenght: %d\n", get_length(myList));
+
+  delete_after(&myList, 25, &temp);
+  printf("Deleted element after 25: %d\n", temp);
+  print_list(myList);
+  
+  delete_after(&myList, 199, &temp);
+  printf("Deleted element after 199: %d\n", temp);
+  print_list(myList);
+
+  delete_after(&myList, 199, &temp);
+  printf("Deleted element after 12: %d\n", temp);
+  print_list(myList);
+
+
+  // destroy_list(&myList);
+  // printf("List destroyed\n");
+  // print_list(myList);
 
   printf("List lenght: %d\n", get_length(myList));
   return 0;

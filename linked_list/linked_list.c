@@ -242,3 +242,117 @@ void delete_last(LinkedList* list, infotype* temp){
     }
   }
 }
+
+// Delete the node after the given data in the list
+void delete_after(LinkedList* list, infotype prev_data, infotype* temp){
+  Node *prev, *del;
+  if(is_list_empty(*list)) return;
+
+  prev = find_node(*list, prev_data);
+  if(prev == NULL){
+    printf("Node with data %d not found\n", prev_data);
+    return;
+  }else{
+    del = prev->next;
+    if(del == NULL){
+      printf("Node with data %d is the last node\n", prev_data);
+      return;
+    }else{
+      prev->next = del->next;
+      del->next = NULL;
+      *temp = del->data;
+      free(del);
+    }
+  }
+}
+
+void delete_before(LinkedList* list, infotype next_data, infotype* temp){
+  Node *prev, *del;
+  if(is_list_empty(*list)) return;
+
+  prev = find_prev_node(*list, find_node(*list, next_data));
+  if(prev == NULL){
+    printf("Node with data %d not found\n", next_data);
+    return;
+  }else{
+    del = prev->next;
+    if(del == NULL){
+      printf("Node with data %d is the first node\n", next_data);
+      return;
+    }else{
+      prev->next = del->next;
+      del->next = NULL;
+      *temp = del->data;
+      free(del);
+    }
+  }
+}
+
+void delete_val(LinkedList* list, infotype data, infotype* temp){
+  Node *curr, *prev;
+  if(is_list_empty(*list)){
+    printf("List is empty\n");
+    return;
+  }else{
+    curr = list->head;
+    prev = NULL;
+    while(curr != NULL && curr->data != data){
+      prev = curr;
+      curr = curr->next;
+    }
+    if(curr == NULL){
+      printf("Node with data %d not found\n", data);
+      return;
+    }else{
+      if(prev == NULL){
+        list->head = curr->next;
+      }else{
+        prev->next = curr->next;
+      }
+      *temp = curr->data;
+      free(curr);
+    }
+  }
+}
+
+void delete_at(LinkedList* list, int position, infotype* temp){
+  Node *curr, *prev;
+  if(is_list_empty(*list)){
+    printf("List is empty\n");
+    return;
+  }else{
+    curr = list->head;
+    prev = NULL;
+    if(position < 1 || position > get_length(*list)){
+      printf("Invalid position\n");
+      return;
+    }
+    for(int i = 1; i < position; i++){
+      prev = curr;
+      curr = curr->next;
+    }
+    if(prev == NULL){
+      list->head = curr->next;
+    }else{
+      prev->next = curr->next;
+    }
+    *temp = curr->data;
+    free(curr);
+  }
+}
+void print_list_reverse(LinkedList list){
+  Node* curr;
+  if(is_list_empty(list)){
+    printf("list empty\n");
+  }else{
+    curr = list.head;
+    while(curr->next != NULL){
+      curr = curr->next;
+    }
+    while(curr != NULL){
+      printf("[%d]->", curr->data);
+      curr = find_prev_node(list, curr);
+    }
+    printf("NULL\n");
+  }
+}
