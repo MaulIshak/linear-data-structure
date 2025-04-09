@@ -32,4 +32,4 @@ done:
 	
 # clean file
 clean:
-	@rm -f test_linked_list test_stack test_queue bin_to_dec
+	@rm -f test_linked_list test_stack test_queue bin_to_dec dec_to_bin
