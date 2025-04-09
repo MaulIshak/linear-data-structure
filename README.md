@@ -7,10 +7,11 @@ This repository contains implementations of basic Linear Data Structure using th
 ## 📁 Project Structure
 
 ```
-adt-c/
+linear-data-structure/
 ├── linked_list/        # Linked List implementation and usage examples
 ├── stack/              # Stack implementation and usage examples
 ├── queue/              # Queue implementation and usage examples
+    ├── case_studies/
 ├── Makefile            # To easily compile all programs
 ├── .gitignore          # Ignore compiled files
 └── README.md           # Project documentation
