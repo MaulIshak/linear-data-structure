@@ -1,8 +1,9 @@
-// File: main_linked_list.c
+// File: test_linked_list.c
 // Author: Maulana Ishak
 // Date: 06-04-2025
 // Description: Main function to test linked list implementation in C
 // License: MIT License
+
 #include <stdio.h>
 #include <stdlib.h>
 #include "linked_list.h"
@@ -66,9 +67,12 @@ int main()
   delete_after(&myList, 199, &temp);
   printf("Deleted element after 199: %d\n", temp);
   print_list(myList);
-
-  delete_after(&myList, 199, &temp);
-  printf("Deleted element after 12: %d\n", temp);
+  printf("List lenght: %d\n", get_length(myList));
+  delete_val(&myList, 199, &temp);
+  printf("Deleted element with value 199: %d\n", temp);
+  print_list(myList);
+  delete_at(&myList, 2, &temp);
+  printf("Deleted element at position 2: %d\n", temp);
   print_list(myList);
 
 

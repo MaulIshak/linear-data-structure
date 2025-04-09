@@ -10,14 +10,14 @@ test_linked_list: linked_list/test_linked_list.c linked_list/linked_list.c
 	@$(CC) $(CFLAGS) -o test_linked_list linked_list/test_linked_list.c linked_list/linked_list.c
 
 # Stack
-test_stack: stack/test_stack.c stack/stack.c
+test_stack: stack/test_stack.c stack/stack.c linked_list/linked_list.c
 	@echo "Compiling test_stack"
-	@$(CC) $(CFLAGS) -o test_stack stack/test_stack.c stack/stack.c
+	@$(CC) $(CFLAGS) -o test_stack stack/test_stack.c stack/stack.c linked_list/linked_list.c
 
 # Queue
-test_queue: queue/test_queue.c queue/queue.c
+test_queue: queue/test_queue.c queue/queue.c linked_list/linked_list.c
 	@echo "Compiling test_queue"
-	@$(CC) $(CFLAGS) -o test_queue queue/test_queue.c queue/queue.c
+	@$(CC) $(CFLAGS) -o test_queue queue/test_queue.c queue/queue.c linked_list/linked_list.c
 
 done:
 	@echo "Done"

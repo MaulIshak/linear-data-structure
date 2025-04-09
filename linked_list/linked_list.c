@@ -215,9 +215,12 @@ void delete_first(LinkedList* list, infotype* temp){
     return;
   }else{
     curr = list->head;
-    *temp = curr->data;
     list->head = curr->next;
+    curr->next = NULL;
+
+    *temp = curr->data;
     free(curr);
+    curr = NULL;
   }
 }
 void delete_last(LinkedList* list, infotype* temp){
