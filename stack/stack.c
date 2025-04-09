@@ -32,6 +32,14 @@ void pop(Stack* stack, infotype* data){
   *stack = temp_list.head;
 }
 
+void pop_print(Stack* stack, infotype* data){
+    LinkedList temp_list;
+    temp_list.head = *stack;
+    delete_first(&temp_list, data);
+    *stack = temp_list.head;
+    printf("%d ", *data);
+}
+
 // Print the stack
 void print_stack(Stack stack) {
     LinkedList temp_list;

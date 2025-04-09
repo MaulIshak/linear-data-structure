@@ -10,7 +10,7 @@
 int main()
 {
   Stack myStack;
-    infotype temp;
+  infotype temp;
 
     // Initialize the stack
     create_stack(&myStack);
@@ -30,20 +30,14 @@ int main()
 
     // Test popping elements from the stack
     printf("\nPopping elements from the stack:\n");
-    pop(&myStack, &temp);
-    printf("Popped element: %d\n", temp);
-    print_stack(myStack);
+    pop_print(&myStack, &temp);
 
-    pop(&myStack, &temp);
-    printf("Popped element: %d\n", temp);
-    print_stack(myStack);
+    pop_print(&myStack, &temp);
     
-    pop(&myStack, &temp);
-    printf("Popped element: %d\n", temp);
-    print_stack(myStack);
+    pop_print(&myStack, &temp);
 
-    pop(&myStack, &temp);
-    printf("Popped element: %d\n", temp);
+    pop_print(&myStack, &temp);
+
     print_stack(myStack);
 
   return 0;
