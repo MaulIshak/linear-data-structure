@@ -26,8 +26,8 @@ int main()
 {
   Stack binStack;
   infotype dec;
-  int i , j, resultElmt, result = 0, bin;
-  char* binStr = (char*)malloc(sizeof(char) * 100);
+  int i , resultElmt, result = 0, bin;
+  char* binStr = (char*)malloc(sizeof(char) * MAX_SIZE);
 
   if (binStr == NULL) {
     printf("Memory allocation failed.\n");
@@ -40,12 +40,10 @@ int main()
   create_stack(&binStack);
   // printf("%d \n", binStr[0] - '0');
   i = 0;
-  j = 0;
   while(binStr[i] != '\0'){
     bin = binStr[i] - '0';
     push(&binStack, bin);
     i++;
-    j++;
   }
   
   // print_stack(binStack);
