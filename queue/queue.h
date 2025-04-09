@@ -6,7 +6,7 @@
 
 #ifndef QUEUE_H
 #define QUEUE_H
-#define MAX_QUEUE 10
+#define MAX_QUEUE 20
 
 #include "../linked_list/linked_list.h"
 

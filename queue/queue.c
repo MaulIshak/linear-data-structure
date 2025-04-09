@@ -65,15 +65,11 @@ void dequeue(Queue* queue, infotype* data){
 }
 
 void print_queue(Queue queue) {
-  Node* curr;
+  LinkedList temp_list;
+  temp_list.head = queue.front;
   if(is_queue_empty(queue)){
     printf("Queue is empty\n");
   }else{
-    curr = queue.front;
-    while(curr != NULL){
-      printf("%d ", curr->data);
-      curr = curr->next;
-    }
-    printf("\n");
+    print_list(temp_list);
   }
 }
