@@ -8,7 +8,7 @@
 #include <stdlib.h>
 #include "../stack.h"
 
-#define MAX_SIZE 1000
+#define MAX_SIZE 1024
 
 int power(int a, int b){
   int result = 1;
@@ -32,21 +32,19 @@ int main()
   if (binStr == NULL) {
     printf("Memory allocation failed.\n");
     return 1;
-}
+  }
 
   printf("Enter a binary number: ");
   scanf("%s", binStr);
 
   create_stack(&binStack);
-  // printf("%d \n", binStr[0] - '0');
+
   i = 0;
   while(binStr[i] != '\0'){
     bin = binStr[i] - '0';
     push(&binStack, bin);
     i++;
   }
-  
-  // print_stack(binStack);
 
   i = 0;
   while(!is_stack_empty(binStack)){
